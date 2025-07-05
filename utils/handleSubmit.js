@@ -39,7 +39,8 @@ export const handleSubmit = async ({
     setTimeout(() => setProgress(80), 2000);
   
     try {
-      const response = await fetch("/api/analyze/", {
+      const response = await fetch("https://moosedemo.com/api/analyze/", {
+      // const response = await fetch("/api/analyze/", {
       // const response = await fetch("http://127.0.0.1:8000/api/analyze/", {
         method: "POST",
         body: formData,
