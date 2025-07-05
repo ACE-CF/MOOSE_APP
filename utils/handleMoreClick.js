@@ -2,7 +2,8 @@
 
 export const handleMoreClick = async (hypothesisText, question, survey,taskId,api_key,hypothesisid,onSuccess, onError) => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/hypothesis_details/", {
+      const res = await fetch("/api/hypothesis_details/", {
+      // const res = await fetch("http://127.0.0.1:8000/api/hypothesis_details/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

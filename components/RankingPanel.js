@@ -18,9 +18,8 @@ export default function RankingPanel() {
           try {
             console.log("taskId:",taskId)
             console.log("modelName:",modelName)
-            // const res = await fetch(`/api/rank/?task_id=${taskId}`);"http://127.0.0.1:8000/api/analyze/"
-            const res = await fetch(`http://127.0.0.1:8000/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`);   
-            console.log("Fetching ranking from:", `http://127.0.0.1:8000/api/rank/?task_id=${taskId}`);    
+            const res = await fetch(`/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`); 
+            // const res = await fetch(`http://127.0.0.1:8000/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`);       
             const data = await res.json();   
             if (data.status === "success") {
               setRankingData(data.rankingData);

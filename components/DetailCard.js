@@ -150,7 +150,7 @@ export default function DetailCard({ details, onClose}) {
               <p>{question}</p>
             </div>
             <div>
-              <strong>Ooarse-grained Hypothesis:</strong>
+              <strong>Hypothesis:</strong>
               <p>{details.hypothesisText}</p>
             </div>
             {/* 如果左侧内容很多，也可以继续往下加 */}

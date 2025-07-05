@@ -18,7 +18,8 @@ export default function RankingPanel2() {
           try {
             console.log("taskId:",taskId)
             console.log("modelName:",modelName)
-            const res = await fetch(`http://127.0.0.1:8000/api/rank2/?task_id=${taskId}&modelName=${modelName}&hpy2Id=${hpy2Id}`);      
+            const res = await fetch(`/api/rank2/?task_id=${taskId}&modelName=${modelName}&hpy2Id=${hpy2Id}`);      
+            // const res = await fetch(`http://127.0.0.1:8000/api/rank2/?task_id=${taskId}&modelName=${modelName}&hpy2Id=${hpy2Id}`);   
             const data = await res.json();   
             console.log("后端返回的数据:", data); 
             if (data.status === "success") {

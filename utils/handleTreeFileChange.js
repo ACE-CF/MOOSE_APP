@@ -9,7 +9,8 @@ export const handleTreeFileChange = async (
   onSuccess
 ) => {
   try {
-    const res = await fetch("http://127.0.0.1:8000/api/load_tree/", {
+    const res = await fetch("/api/load_tree/", {
+    // const res = await fetch("http://127.0.0.1:8000/api/load_tree/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

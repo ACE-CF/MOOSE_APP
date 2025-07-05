@@ -29,7 +29,8 @@ export async function handleMoose2Click({
     formData.append("hypothesisText", hypothesisText);
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/get_feedback_moose2/", {
+        // const response = await fetch("http://127.0.0.1:8000/api/get_feedback_moose2/", {
+        const response = await fetch("/api/get_feedback_moose2/", {
         method: "POST",
         body: formData,
         });
