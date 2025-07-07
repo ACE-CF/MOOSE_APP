@@ -60,7 +60,45 @@ export default function FormPanel({
   const handleRemoveFile = () => {
     setFile(null);
   };
+  const validateForm = () => {
+    if (!question.trim()) {
+      alert("Research Question is required.");
+      return false;
+    }
+    if (!survey.trim()) {
+      alert("Background Survey is required.");
+      return false;
+    }
+    if (!apiKey.trim()) {
+      alert("API Key is required.");
+      return false;
+    }
+    if (!modelName.trim()) {
+      alert("Model Name is required.");
+      return false;
+    }
+    if (!baseUrl.trim()) {
+      alert("Base URL is required.");
+      return false;
+    }
+    if (!apiType.trim()) {
+      alert("API Type is required.");
+      return false;
+    }
+    if (!file) {
+      alert("File upload is required.");
+      return false;
+    }
+    const allowedExtensions = ['.xlsx', '.xls'];
+    const fileName = file.name.toLowerCase();
+    const isExcel = allowedExtensions.some(ext => fileName.endsWith(ext));
 
+    if (!isExcel) {
+      alert("Only .xlsx and .xls files are allowed.");
+      return false;
+    }
+    return true;
+  };
   return (
     <div className="w-full md:w-1/3 p-6 bg-white rounded-2xl shadow-lg space-y-6">
       <Typography variant="h5" className="font-semibold">💡 Research Assistant</Typography>
@@ -101,7 +139,7 @@ export default function FormPanel({
           <input
             id="file-upload"
             type="file"
-            accept=".pdf,.txt,.csv"
+            accept=".xlsx,.xls"
             style={{ display: "none" }}
             onChange={handleFileChange}
           />
@@ -185,7 +223,12 @@ export default function FormPanel({
         <div>
           <Button
             variant="contained"
-            onClick={handleSubmit}
+            onClick={() => {
+              if (validateForm()) {
+                handleSubmit(); // 如果验证通过才调用原始提交函数
+              }
+            }}
+            // onClick={handleSubmit}
             disabled={loading}
             fullWidth
             size="large"
