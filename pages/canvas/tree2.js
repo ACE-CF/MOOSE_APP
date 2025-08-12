@@ -4,7 +4,7 @@ import CanvasWrapper from "../../components/CanvasWrapper";
 import TreeCanvas2 from "../../components/TreeCanvas2"; // 默认页显示树图
 import { handleSubmit as submitHandler } from "../../utils/handleSubmit";
 import { useAppContext } from "../../context/AppContext";
-
+import UserGuide from "../components/UserGuide"; 
 export default function HomePage() {
     
     const [loading, setLoading] = useState(false);
@@ -44,6 +44,7 @@ export default function HomePage() {
             <CanvasWrapper>
                 <TreeCanvas2 />
             </CanvasWrapper>
+            <UserGuide />
         </div>
     );
 }

@@ -20,6 +20,7 @@ import CanvasWrapper from "../components/CanvasWrapper";
 import TreeCanvas from "../components/TreeCanvas"; // 默认页显示树图
 import { handleSubmit as submitHandler } from "../utils/handleSubmit";
 import { useAppContext } from "../context/AppContext";
+import UserGuide from "../components/UserGuide"; 
 
 export default function HomePage() {
     
@@ -57,6 +58,7 @@ export default function HomePage() {
             <CanvasWrapper>
                 <TreeCanvas />
             </CanvasWrapper>
+            <UserGuide />
         </div>
     );
 }

@@ -100,7 +100,14 @@ export default function FormPanel({
     return true;
   };
   return (
-    <div className="w-full md:w-1/3 p-6 bg-white rounded-2xl shadow-lg space-y-6">
+    // <div 
+    //   className="w-full md:w-1/3 p-6 bg-white rounded-2xl shadow-lg space-y-6" 
+    //   style={{ maxHeight: '100vh', overflowY: 'auto' }}
+    // >
+    <div
+      className="w-full md:w-1/3 p-6 bg-white rounded-2xl shadow-lg space-y-4"
+      style={{ maxHeight: '100vh', overflowY: 'auto' }}
+    >
       <Typography variant="h5" className="font-semibold">💡 Research Assistant</Typography>
       <div className="space-y-4">
         <TextField
