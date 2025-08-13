@@ -4,7 +4,7 @@ import CanvasWrapper from "../../components/CanvasWrapper";
 import AddedDetailsPanel from "../../components/AddedDetailsPanel"; // 默认页显示树图
 import { handleSubmit as submitHandler } from "../../utils/handleSubmit";
 import { useAppContext } from "../../context/AppContext";
-import UserGuide from "../components/UserGuide"; 
+import UserGuide from "../../components/UserGuide"; 
 export default function HomePage() {
     
     const [loading, setLoading] = useState(false);

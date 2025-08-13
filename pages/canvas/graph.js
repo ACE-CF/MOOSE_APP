@@ -5,7 +5,7 @@ import RankingPanel from "../../components/RankingPanel";
 import { useState } from "react";  // 导入 useEffect
 import { useAppContext } from "../../context/AppContext";
 import { handleSubmit as submitHandler } from "../../utils/handleSubmit";
-import UserGuide from "../components/UserGuide"; 
+import UserGuide from "../../components/UserGuide"; 
 export default function GraphViewPage() {
   // 保持左侧表单状态
   const [loading, setLoading] = useState(false);
