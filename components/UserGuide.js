@@ -35,8 +35,18 @@ export default function UserGuide() {
               <section>
                 <h3 className="font-semibold text-lg text-blue-500">Inspiration Corpus</h3>
                 <p>
-                  MOOSE-Copilot searches for inspirations to compose new hypothesis with this corpus. It is basically a list of [title, abstract] of existing literature. It can be downloaded in batch from Web of Science, with your customized journal names and/or keywords input.
+                  MOOSE-Copilot searches for inspirations to compose new hypothesis with this corpus. It is basically a list of [title, abstract] of existing literature. It can be downloaded in batch from{' '}
+                  <a
+                    href="https://www.webofscience.com/wos/woscc/summary/0d1f66e0-aebb-4b29-a6c8-d685e04c2ea9-015bae6080/relevance/1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:text-blue-800"
+                  >
+                    Web of Science
+                  </a>
+                  , with your customized journal names and/or keywords input.
                 </p>
+
                 <div className="bg-gray-50 border-l-4 border-blue-300 p-4 mt-2 rounded">
                   <ol className="list-decimal pl-5 space-y-1">
                     <li>Use Web of Science to search for papers by journal name and optionally filter with keywords</li>
