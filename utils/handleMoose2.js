@@ -36,14 +36,14 @@ export async function handleMoose2Click({
         });
         const result = await response.json();
         if (response.ok) {
-        console.log("MOOSE1 success:", result);
+        console.log("MOOSE2 success:", result);
         setHpy2Id(newHpy2Id);
         if (onSuccess) onSuccess(result);
         } else {
         throw new Error(result.error || "Unknown error");
         }
     } catch (error) {
-        console.error("MOOSE1 failed:", error);
+        console.error("MOOSE2 failed:", error);
         if (onError) onError(error.message);
         alert("Failed to run MOOSE2. Please check the console for details.");
     }

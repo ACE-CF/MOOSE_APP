@@ -28,10 +28,13 @@ export function AppProvider({ children }) {
   const [modelName, setModelName] = useState("");
   const [baseUrl, setBaseUrl] = useState("");
   const [file, setFile] = useState();
+  const [file2, setFile2] = useState();
+  const [MooseVersion, setMooseVersion] = useState();
+  
   
 
   return (
-    <AppContext.Provider value={{nowhpy1Id, setNowHpy1Id,nowhpy2Id, setNowHpy2Id,rankingData2, setRankingData2,treeFileName2, setTreeFileName2,treeFileName2s, setTreeFileName2s,output2, setOutput2,hpy1Id, setHpy1Id,hpy2Id, setHpy2Id,modelName, setModelName,apiType, setApiType,baseUrl, setBaseUrl,taskId, setTaskId,output, setOutput,addedDetails, setAddedDetails,  rankingData, setRankingData ,question, setQuestion,survey, setSurvey,apiKey, setApiKey,file, setFile,treeFileNames, setTreeFileNames,treeFileName, setTreeFileName,}}>
+    <AppContext.Provider value={{MooseVersion, setMooseVersion,file2, setFile2,nowhpy1Id, setNowHpy1Id,nowhpy2Id, setNowHpy2Id,rankingData2, setRankingData2,treeFileName2, setTreeFileName2,treeFileName2s, setTreeFileName2s,output2, setOutput2,hpy1Id, setHpy1Id,hpy2Id, setHpy2Id,modelName, setModelName,apiType, setApiType,baseUrl, setBaseUrl,taskId, setTaskId,output, setOutput,addedDetails, setAddedDetails,  rankingData, setRankingData ,question, setQuestion,survey, setSurvey,apiKey, setApiKey,file, setFile,treeFileNames, setTreeFileNames,treeFileName, setTreeFileName,}}>
       {children}
     </AppContext.Provider>
   );

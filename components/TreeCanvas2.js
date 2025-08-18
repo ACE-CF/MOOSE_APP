@@ -127,17 +127,6 @@ export default function TreeCanvas() {
             {/* 顶部标题和下拉框 */}
             <div className="flex justify-between items-center mb-2">
                 <h2 className="text-2xl font-semibold text-gray-700">Generated Detail Hypotheses</h2>
-
-                {/* <select
-                    value={treeFileName2}
-                    onChange={(e) => setTreeFileName2(e.target.value)}
-                    >
-                    {treeFileName2s.map((name) => (
-                        <option key={name} value={name}>
-                        {name}
-                        </option>
-                    ))}
-                </select> */}
                 <select
                     value={treeFileName2}
                     onChange={(e) => setTreeFileName2(e.target.value)}

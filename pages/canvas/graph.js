@@ -5,16 +5,18 @@ import RankingPanel from "../../components/RankingPanel";
 import { useState } from "react";  // 导入 useEffect
 import { useAppContext } from "../../context/AppContext";
 import { handleSubmit as submitHandler } from "../../utils/handleSubmit";
+import { handleFileSubmit as fileHandler } from "../../utils/handleFileSubmit";
 import UserGuide from "../../components/UserGuide"; 
 export default function GraphViewPage() {
   // 保持左侧表单状态
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const {
+     MooseVersion, setMooseVersion,setOutput2,
     question, setQuestion,
     survey, setSurvey,apiType, setApiType,
     apiKey, setApiKey,modelName, setModelName,baseUrl, setBaseUrl,
-    file, setFile,setOutput,setTaskId,
+    file, setFile,file2,setFile2,setOutput,setTaskId,
         treeFileName, setTreeFileName,hpy1Id, setHpy1Id,setHpy2Id,
         treeFileNames,setTreeFileNames
   } = useAppContext();
@@ -37,10 +39,22 @@ export default function GraphViewPage() {
       setTreeFileNames
     });
   };
-
+    const handleFileSubmit = () => {
+      fileHandler({
+        file2,
+        MooseVersion,
+        setLoading,
+        setProgress,
+        setOutput,
+        setOutput2,
+        setTaskId,
+        setTreeFileName,
+        setTreeFileNames
+      });
+    };
   return (
           <div className="flex h-screen p-4">
-              <FormPanel {...{ question,setQuestion,apiType, setApiType, survey, setSurvey, apiKey, setApiKey,modelName, setModelName,baseUrl, setBaseUrl, file, setFile, handleSubmit, loading, progress }} />
+              <FormPanel {...{ handleFileSubmit, MooseVersion, setMooseVersion,question,setQuestion,apiType, setApiType, survey, setSurvey, apiKey, setApiKey,modelName, setModelName,baseUrl, setBaseUrl, file, setFile, file2,setFile2,handleSubmit, loading, progress }} />
               <CanvasWrapper>
                 <RankingPanel />
               </CanvasWrapper>

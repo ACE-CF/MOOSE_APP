@@ -18,8 +18,7 @@ export default function RankingPanel() {
           try {
             console.log("taskId:",taskId)
             console.log("modelName:",modelName)
-            const res = await fetch(`/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`); 
-            // const res = await fetch(`http://127.0.0.1:8000/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`);       
+            const res = await fetch(`/api/rank/?task_id=${taskId}&modelName=${modelName}&hpy1Id=${hpy1Id}`);      
             const data = await res.json();   
             if (data.status === "success") {
               setRankingData(data.rankingData);
@@ -40,7 +39,6 @@ export default function RankingPanel() {
           hypothesisText: hypothesisText,
           feedback:feedback,
         });
-        // console.log("hypothesisText:", hypothesisText);
       };
 
 
@@ -93,49 +91,3 @@ export default function RankingPanel() {
       </div>
     );
   }
-
-        // const onMoreClick = (hypothesisText,hypothesisid) => {
-      //   handleMoreClick(
-      //     hypothesisText,
-      //     question,
-      //     survey,
-      //     taskId,
-      //     apiKey,
-      //     hypothesisid,
-      //     (details) => {
-      //       // console.log("Success:", details);
-      //       // TODO: 显示 modal 或存入 context
-      //       setSelectedDetail({
-      //         details: details,
-      //         hypothesisText: hypothesisText,
-      //         question: question,
-      //       });
-      //     },
-      //     (errorMessage) => {
-      //       console.error("Failed to get details:", errorMessage);
-      //     }
-      //   );
-      // };
-
-              {/* {selectedDetail && (
-          <DetailCard
-            details={selectedDetail}
-            onClose={() => setSelectedDetail(null)}
-            onAdd={() => {
-              console.log("Add clicked!");
-              if (selectedDetail) {
-                const alreadyAdded = addedDetails.some(
-                  (item) => item.details === selectedDetail.details
-                );
-                if (!alreadyAdded) {
-                  setAddedDetails(prev => [...prev, selectedDetail]); //  把当前选中的 detail 加到数组里
-                  console.log("Added new detail:", selectedDetail);
-                } else {
-                  console.log("Detail already added, skipping:", selectedDetail);
-                }
-              }
-              // console.log("3",addedDetails)
-              setSelectedDetail(null); 
-            }}
-          />
-        )} */}

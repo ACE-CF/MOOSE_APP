@@ -52,7 +52,7 @@ export default function ResearchForm() {
 
         try {
             // 发送 POST 请求到后端   http://127.0.0.1:8000/api/analyze/   /api/analyze
-            const response = await fetch("http://127.0.0.1:8000/api/analyze/", {
+            const response = await fetch("/api/analyze/", {
                 method: "POST",
                 body: formData,
             });

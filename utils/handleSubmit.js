@@ -64,10 +64,12 @@ export const handleSubmit = async ({
         }, 1000);
       } else {
         setLoading(false);
-        alert("Hypothesis generation failed");
+        alert("An error occurred while processing your request: " + data.message);
+        setLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
+      alert("Request failed: " + error.message);
       setLoading(false);
     }
   };
