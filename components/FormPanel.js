@@ -253,20 +253,20 @@ export default function FormPanel({
               color="primary"
               fullWidth
               onClick={() => {
-                window.location.href = "http://127.0.0.1:8000/api/download/moose1_tree"; // 对应后端路由
+                window.location.href = "/api/download/moose1_tree"; // 对应后端路由
               }}
             >
-              moose1 tree
+              MOOSE1 Example Result File
             </Button>
             <Button
               variant="outlined"
               color="primary"
               fullWidth
               onClick={() => {
-                window.location.href = "http://127.0.0.1:8000/api/download/moose2_tree"; // 对应后端路由
+                window.location.href = "/api/download/moose2_tree"; // 对应后端路由
               }}
             >
-              moose2 tree
+              MOOSE2 Example Result File
             </Button>
           </div>
           {/* 文件上传 */}
@@ -290,7 +290,7 @@ export default function FormPanel({
                 fullWidth
                 startIcon={<UploadFileIcon />}
               >
-                {file2 ? "Replace File" : "Upload File"}
+                {file2 ? "Replace Result File" : "Upload Result File"}
               </Button>
             </label>
           </div>
@@ -365,7 +365,7 @@ export default function FormPanel({
               disabled={loading}
               className="rounded-xl"
             >
-              {loading ? <CircularProgress size={24} color="inherit" /> : "Submit"}
+              {loading ? <CircularProgress size={24} color="inherit" /> : "Visualize Result File"}
             </Button>
             {loading && <LinearProgress variant="determinate" value={progress} className="mt-2" />}
           </div>
