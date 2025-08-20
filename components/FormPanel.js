@@ -89,8 +89,7 @@ export default function FormPanel({
           onClick={() => setActivePanel("other")}
           fullWidth
         >
-          Other 
-          Panel
+          Result Visualizer
         </Button>
       </div>
 
